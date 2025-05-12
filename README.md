@@ -27,15 +27,17 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 - Authentification par rôle : **Superviseur** ou **Technicien**.
 - Utilisation de sessions et de jetons JWT pour la sécurité.
 - Redirection vers les pages autorisées selon le rôle.
+ - *Identifiant par défaut* : admin
+  - *Mot de passe par défaut* : admin
   
 ### Produit
 - Création et affichage de produits avec leurs quantités. 
 - Ces produits sont des matières premières permettant de fabriquer des jetons.
 
-  ### Recette
+### Recette
   
-  - Création de recettes à partir de produits existants.
-  - Chaque recette peut contenir plusieurs composants avec des quantités précises
+- Création de recettes à partir de produits existants.
+- Chaque recette peut contenir plusieurs composants avec des quantités précises
     
     
 ### Ordres de Fabrication (OF)
