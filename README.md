@@ -87,7 +87,7 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 ### Suppression des données :
 
 - Confirmation demandée avant toute suppression.
-- Les entités liées (ex. : recettes – jetons) sont prises en compte pour éviter les erreurs.
+- Les entités liées (ex. : recettes – ordreFabrication) sont prises en compte pour éviter les erreurs.
 
 ## 6. Interaction avec l’Interface Utilisateur
 
