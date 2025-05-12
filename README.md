@@ -1,8 +1,8 @@
-# 🔧 Projet de Stage — Numérisation du Processus de Fabrication de Jetons Caddie
+# Projet de Stage — Numérisation du Processus de Fabrication de Jetons Caddie
 
 ## 1. Introduction
 
-Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest**. Il vise à digitaliser le processus de fabrication des jetons de caddie à travers une application web développée avec Laravel et Bootstrap. L'application permet aux techniciens et superviseurs de gérer les recettes, les stocks, les jetons fabriqués et les ordres de fabrication (OF).
+Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest**. Il vise à digitaliser le processus de fabrication des jetons de caddie à travers une application web développée avec Laravel et Bootstrap. L'application permet aux techniciens et superviseurs de gérer les recettes, les stocks, les ordres de fabrication (OF), les controles de qualité et les fiches de livraison.
 
 ## 2. Prérequis Avant Démarrage
 
@@ -11,13 +11,12 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 - PHP >= 8.1
 - Composer
 - MySQL / MariaDB
-- Node.js & npm
 - Laravel 10+
-- Un serveur local (comme Laragon, XAMPP ou Docker)
+- Un serveur local 
 
 ### Installation de la base de données :
 
-- Un script SQL de création de la base est fourni dans le dossier `/database`.
+- Un script SQL de création de la base est fourni dans la racine du projet`.
 - Exécutez-le dans votre SGBD pour créer les tables nécessaires.
 - Configurez ensuite votre fichier `.env` avec vos informations MySQL.
 
@@ -28,19 +27,33 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 - Authentification par rôle : **Superviseur** ou **Technicien**.
 - Utilisation de sessions et de jetons JWT pour la sécurité.
 - Redirection vers les pages autorisées selon le rôle.
+  
+### Produit
+- Création et affichage de produits avec leurs quantités. 
+- Ces produits sont des matières premières permettant de fabriquer des jetons.
 
-### 🧾 Ordres de Fabrication (OF)
+  ### Recette
+  
+  - Création de recettes à partir de produits existants.
+  - Chaque recette peut contenir plusieurs composants avec des quantités précises
+    
+    
+### Ordres de Fabrication (OF)
 
-- Affichage, création, modification et suppression d'OF.
-- Suivi du statut de fabrication.
+- Affichage, création et modification d'OF.
+- Suivi du statut de fabrication (en cours, terminé, annulé).
+  
 
-### 🪙 Gestion des Jetons
+### Controle de qualité
 
-- Création d’un jeton à partir d’une **recette**.
-- Déduction automatique des composants du stock lors de la fabrication.
-- Visualisation des stocks de jetons.
+- formulaire permettant de saisir les caractéristiques (épaisseur, diamètre, couleur) des 4 premiers jetons produits pour chaque OF. 
+- En fonction des valeurs de chaque caractéristique, le système donne automatiquement le résultat de conformité .
+  
 
-### 📦 Gestion du Stock
+### Fiche de livraison
+- Création d’une fiche de livraison pour chaque OF terminé, avec la date de fin et le technicien responsable.
+
+### Gestion du Stock
 
 - Suivi des matières premières disponibles.
 - Mise à jour des quantités restantes après fabrication.
@@ -55,12 +68,12 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 ### Format des champs :
 
 - Date : `aaaa-mm-jj`
-- Quantité : valeur entière positive
+- Quantité : valeur décimale
 - Champs obligatoires : tous les champs de formulaire doivent être remplis correctement pour soumettre une action
 
 ### Navigation :
 
-- Barre latérale ou de menu pour accéder aux sections : Jetons, OF, Stock, Personnel (selon le rôle).
+- Barre latérale ou de menu pour accéder aux sections : OF, Stock, Personnel (selon le rôle).
 - Les boutons permettent d’effectuer les actions classiques : ajouter, modifier, supprimer, actualiser.
 
 ## 5. Gestion des Données
@@ -82,18 +95,4 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 - Utilisation d’AJAX pour charger les contenus dynamiquement sans recharger la page.
 - Affichage d’alertes de succès/erreur après chaque opération.
 
-## 7. Recettes et Jetons
-
-### Création de Recettes :
-
-- Une recette associe plusieurs composants avec des quantités précises.
-- Lorsqu’un jeton est fabriqué, les quantités de chaque composant sont automatiquement décrémentées.
-
-### Ajout d’un Jeton :
-
-- Sélection d’une recette.
-- Saisie de la quantité à produire.
-- Vérification du stock avant validation.
-
-## 8. Structure Technique du Projet
 
