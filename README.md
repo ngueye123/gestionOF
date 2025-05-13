@@ -69,7 +69,7 @@ Ce projet a été réalisé dans le cadre d’un stage au **GRETA Lorraine Ouest
 
 ### Format des champs :
 
-- Date : `aaaa-mm-jj`
+- Date : `jj-mm-aaaa`
 - Quantité : valeur décimale
 - Champs obligatoires : tous les champs de formulaire doivent être remplis correctement pour soumettre une action
 
